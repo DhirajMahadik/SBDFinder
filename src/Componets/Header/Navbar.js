@@ -1,13 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { PersonCircle, PeopleFill, HouseFill } from 'react-bootstrap-icons';
 
 function Navbar() {
   return (
     <Wrapper>
         <nav className="navbar navbar-expand-lg bg-light">
   <div className="container-fluid">
-    <Link className="navbar-brand" to="#"><span>SB</span>Finder</Link>
+    <Link className="navbar-brand" to="#"><span> SB</span>Finder</Link>
     <div>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
@@ -15,10 +16,10 @@ function Navbar() {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <Link className="nav-link " aria-current="page" to="#">Home</Link>
+          <Link className="nav-link " aria-current="page" to="home-seeker"> <HouseFill className='icon'/>Home</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="#">Profile</Link>
+          <Link className="nav-link" to="seeker-profile"> <PersonCircle className='icon'/>Profile</Link>
         </li>
         {/* <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -32,7 +33,7 @@ function Navbar() {
           </ul>
         </li> */}
         <li className="nav-item">
-          <Link className="nav-link " to='#'>Donor's List</Link>
+          <Link className="nav-link " to='donor-list'><PeopleFill className='icon'/>Donor's List</Link>
         </li>
       </ul>
       {/* <form className="d-flex" role="search">
@@ -54,7 +55,12 @@ const Wrapper = styled.div`
 span{
     color: red;
     font-weight: 700;
+}
 
+.icon{
+  padding-right: 4px;
+  font-size: 1.5rem;
+  margin-bottom: 6px;
 }
 
 .collapse{
@@ -63,6 +69,7 @@ span{
 .navbar-brand{
     margin-left: 10px;
     font-weight: 600;
+    font-size: 1.5rem;
 }
 
 `
